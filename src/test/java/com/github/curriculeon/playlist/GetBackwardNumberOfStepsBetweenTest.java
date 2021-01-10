@@ -49,4 +49,63 @@ public class GetBackwardNumberOfStepsBetweenTest {
         // when
         test(songNameList, startingIndex, desiredSongIndex, expectedNumberOfSteps);
     }
+
+
+    @Test
+    public void test3() {
+        String[] songNameArray = {"the", "quick", "brown", "fox", "jumps", "over", "the"};
+        Integer startingIndex = 0;
+        Integer expectedNumberOfSteps = 2;
+        Integer desiredSongIndex = 5;
+
+        // when
+        test(songNameArray, startingIndex, desiredSongIndex, expectedNumberOfSteps);
+    }
+
+
+    @Test
+    public void test4() {
+        String[] songNameArray = {"the", "quick", "brown", "fox", "jumps", "over", "the"};
+        Integer startingIndex = 1;
+        Integer expectedNumberOfSteps = 3;
+        Integer desiredSongIndex = 5;
+
+        // when
+        test(songNameArray, startingIndex, desiredSongIndex, expectedNumberOfSteps);
+    }
+
+
+    @Test
+    public void test5() {
+        String[] songNameArray = {"the", "quick", "brown", "fox", "jumps", "over", "the"};
+        Integer startingIndex = 2;
+        Integer expectedNumberOfSteps = 4;
+        Integer desiredSongIndex = 5;
+
+        // when
+        test(songNameArray, startingIndex, desiredSongIndex, expectedNumberOfSteps);
+    }
+
+
+    @Test
+    public void test6() {
+        String[] songNameArray = {"the", "quick", "brown", "fox", "jumps", "over", "the"};
+        Integer startingIndex = 5;
+        Integer expectedNumberOfSteps = 1;
+        Integer desiredSongIndex = 4;
+
+        // when
+        test(songNameArray, startingIndex, desiredSongIndex, expectedNumberOfSteps);
+    }
+
+    @Test
+    public void test7() {
+        String[] songNameArray = {"the", "quick", "brown", "fox", "jumps", "over", "the"};
+        Integer startingIndex = 5;
+        Integer expectedNumberOfSteps = 4;
+        Integer desiredSongIndex = 1;
+
+        // when
+        test(songNameArray, startingIndex, desiredSongIndex, expectedNumberOfSteps);
+    }
 }
