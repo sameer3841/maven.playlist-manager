@@ -9,14 +9,10 @@ import org.junit.Test;
  */
 public class GetMinimumNumberOfStepsBetweenTest {
 
-    @Test
-    public void getMinimumNumberOfStepsBetweenTest1() {
+    private void test(String[] songArray, int startingIndex, int desiredSongIndex, Integer expected) {
         // given
-        String[] playlist = {"wheniseeyouagain", "borntorun", "nothingelsematters", "cecelia"};
-        Playlist music = new Playlist(playlist);
-        String desiredSong = "cecelia";
-        Integer startingIndex = 1;
-        Integer expected = 2;
+        Playlist music = new Playlist(songArray);
+        String desiredSong = songArray[desiredSongIndex];
 
         // when
         Integer actual = music.getMinimumNumberOfStepsBetween(startingIndex, desiredSong);
@@ -25,14 +21,93 @@ public class GetMinimumNumberOfStepsBetweenTest {
         Assert.assertEquals(expected, actual);
     }
 
+
     @Test
-    public void getMinimumNumberOfStepsBetweenTest2() {
+    public void test1() {
+        // given
+        String[] playlist = {"wheniseeyouagain", "borntorun", "nothingelsematters", "cecelia"};
+        int desiredSongIndex = 3;
+        int startingIndex = 1;
+        int expected = 2;
+        test(playlist, desiredSongIndex, startingIndex, expected);
+    }
+
+
+    @Test
+    public void test2() {
+        // given
+        String[] playlist = {"wheniseeyouagain", "borntorun", "nothingelsematters", "cecelia"};
+        int desiredSongIndex = 2;
+        int startingIndex = 1;
+        int expected = 1;
+        test(playlist, desiredSongIndex, startingIndex, expected);
+    }
+
+    @Test
+    public void test3() {
+        // given
         String[] playlist = {"dancinginthedark", "rio", "liveoak", "liveoak"};
-        Playlist music = new Playlist(playlist);
-        String desiredSong = "liveoak";
-        Integer startingIndex = 0;
-        Integer expected = 1;
-        Integer actual = music.getMinimumNumberOfStepsBetween(startingIndex, desiredSong);
-        Assert.assertEquals(expected, actual);
+        int desiredSongIndex = 2;
+        int startingIndex = 1;
+        int expected = 1;
+
+        test(playlist, desiredSongIndex, startingIndex, expected);
+    }
+
+
+
+    @Test
+    public void test4() {
+        // given
+        String[] playlist = {"dancinginthedark", "rio", "liveoak", "liveoak"};
+        int desiredSongIndex = 1;
+        int startingIndex = 0;
+        int expected = 1;
+
+        test(playlist, desiredSongIndex, startingIndex, expected);
+    }
+
+    @Test
+    public void test5() {
+        // given
+        String[] playlist = {"dancinginthedark", "rio", "liveoak", "liveoak"};
+        int desiredSongIndex = 1;
+        int startingIndex = 3;
+        int expected = 1;
+
+        test(playlist, desiredSongIndex, startingIndex, expected);
+    }
+
+    @Test
+    public void test6() {
+        // given
+        String[] playlist = {"The", "Quick", "Brown", "Fox", "Jumps", "Over", "The", "Lazy", "Dog"};
+        int desiredSongIndex = 4;
+        int startingIndex = 6;
+        int expected = 2;
+
+        test(playlist, desiredSongIndex, startingIndex, expected);
+    }
+
+    @Test
+    public void test7() {
+        // given
+        String[] playlist = {"The", "Quick", "Brown", "Fox", "Jumps", "Over", "The", "Lazy", "Dog"};
+        int desiredSongIndex = 4;
+        int startingIndex = 2;
+        int expected = 2;
+
+        test(playlist, desiredSongIndex, startingIndex, expected);
+    }
+
+    @Test
+    public void test8() {
+        // given
+        String[] playlist = {"The", "Quick", "Brown", "Fox", "Jumps", "Over", "The", "Lazy", "Dog"};
+        int desiredSongIndex = 1;
+        int startingIndex = 3;
+        int expected = 2;
+
+        test(playlist, desiredSongIndex, startingIndex, expected);
     }
 }
