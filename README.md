@@ -1,4 +1,4 @@
-# Project Title
+# Playlist & Playlist Manager
 
 * **Objective** - To create a `PlaylistManager` which mediates the behavior of a `Playlist`.
 * **Purpose** - To gain familiarity the following features
