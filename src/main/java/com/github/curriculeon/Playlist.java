@@ -16,6 +16,10 @@ public class Playlist {
         this.songNameArray = songNameArray;
     }
 
+    public String[] getSongNameArray() {
+        return songNameArray;
+    }
+
     public String getCurrentSelection() {
         return this.songNameArray[currentIndex];
     }
