@@ -7,8 +7,12 @@ import java.util.StringJoiner;
 public class ApplicationRunner implements Runnable {
     public void run() {
         PlaylistManager playlistManager = new PlaylistManager();
-        String userInput = null;
+
+
+        String userInput;
         do {
+
+
             String playlistManagerMenuInput;
             do {
                 playlistManagerMenuInput = getPlaylistManagerInput();
@@ -21,10 +25,11 @@ public class ApplicationRunner implements Runnable {
                 } else if ("print-all".equalsIgnoreCase(playlistManagerMenuInput)) {
                     playlistManager.printAll();
                 } else if ("playlist-menu".equalsIgnoreCase(playlistManagerMenuInput)) {
+
+
                     String playlistMenuInput;
                     do {
                         playlistMenuInput = getPlaylistMenuInput();
-
                         if ("next-song".equalsIgnoreCase(playlistMenuInput)) {
                             playlistManager.getPlaylist().goToNextSong();
                         } else if ("previous-song".equalsIgnoreCase(playlistMenuInput)) {
