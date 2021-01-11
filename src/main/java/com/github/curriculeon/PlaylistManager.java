@@ -10,11 +10,11 @@ public class PlaylistManager {
     private Playlist playlist;
 
     public PlaylistManager(String[] songs) {
-        this(Arrays.asList(songs));
+        this.playlist = new Playlist(songs);
     }
 
     public PlaylistManager(List<String> songs) {
-        this.playlist = new Playlist(songs.toArray(new String[0]));
+        this(songs.toArray(new String[0]));
     }
 
     public PlaylistManager() {

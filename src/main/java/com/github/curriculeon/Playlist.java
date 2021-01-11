@@ -59,8 +59,8 @@ public class Playlist {
         this.currentIndex = currentIndex;
         while (!desiredSong.equals(getCurrentSelection())) {
             String songInPlaylist = songNameArray[currentIndex];
-            Boolean isSongInPlaylistCurrentSelectedSong = songInPlaylist.equals(getCurrentSelection());
-            Boolean isCurrentSelectedSongDesiredSong = getCurrentSelection().equals(desiredSong);
+            Boolean isSongInPlaylistCurrentSelectedSong = getCurrentSelection().equalsIgnoreCase(songInPlaylist);
+            Boolean isCurrentSelectedSongDesiredSong = getCurrentSelection().equalsIgnoreCase(desiredSong);
             Boolean isCorrectSong = isSongInPlaylistCurrentSelectedSong && isCurrentSelectedSongDesiredSong;
             if (isCorrectSong) {
                 return numberOfSteps;
