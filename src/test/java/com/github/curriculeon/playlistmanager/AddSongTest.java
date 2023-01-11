@@ -12,38 +12,38 @@ public class AddSongTest {
 
     @Test
     public void testAddSongOnNonEmptyPlaylist() {
-        // Arrange
+        // Given
         String[] songs = {"song1", "song2", "song3"};
         PlaylistManager manager = new PlaylistManager(songs);
         String songToAdd = "song4";
-        // Act
+        // When
         manager.addSong(songToAdd);
-        // Assert
+        // Then
         Playlist modifiedPlaylist = manager.getPlaylist();
         assertTrue(Arrays.asList(modifiedPlaylist.getSongNameArray()).contains(songToAdd));
     }
 
     @Test
     public void testAddSongOnEmptyPlaylist() {
-        // Arrange
+        // Given
         PlaylistManager manager = new PlaylistManager();
         String songToAdd = "song4";
-        // Act
+        // When
         manager.addSong(songToAdd);
-        // Assert
+        // Then
         Playlist modifiedPlaylist = manager.getPlaylist();
         assertTrue(Arrays.asList(modifiedPlaylist.getSongNameArray()).contains(songToAdd));
     }
 
     @Test
     public void testAddDuplicateSong() {
-        // Arrange
+        // Given
         PlaylistManager manager = new PlaylistManager();
         String[] songs = {"song1","song2","song3"};
         String songToAdd = "song2";
-        // Act
+        // When
         manager.addSong(songToAdd);
-        // Assert
+        // Then
         Playlist modifiedPlaylist = manager.getPlaylist();
         int count = 0;
         for (String song : modifiedPlaylist.getSongNameArray()) {

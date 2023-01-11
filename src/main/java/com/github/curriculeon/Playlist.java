@@ -39,5 +39,4 @@ public class Playlist {
     public Integer getBackwardNumberOfStepsBetween(Integer currentIndex, String desiredSong) {
         return null;
     }
-
 }

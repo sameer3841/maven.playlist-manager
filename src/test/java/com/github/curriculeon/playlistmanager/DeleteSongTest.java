@@ -13,35 +13,35 @@ public class DeleteSongTest {
 
     @Test
     public void testRemoveSongOnNonEmptyPlaylist() {
-        // Arrange
+        // Given
         String[] songs = {"song1","song2","song3"};
         PlaylistManager manager = new PlaylistManager(songs);
         String songToRemove = "song2";
-        // Act
+        // When
         manager.removeSong(songToRemove);
-        // Assert
+        // Then
         Playlist modifiedPlaylist = manager.getPlaylist();
         assertFalse(Arrays.asList(modifiedPlaylist.getSongNameArray()).contains(songToRemove));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testRemoveSongOnEmptyPlaylist() {
-        // Arrange
+        // Given
         PlaylistManager manager = new PlaylistManager();
         String songToRemove = "song2";
-        // Act
+        // When
         manager.removeSong(songToRemove);
     }
 
     @Test
     public void testRemoveNonExistentSong() {
-        // Arrange
+        // Given
         String[] songs = {"song1", "song2", "song3"};
         PlaylistManager manager = new PlaylistManager(songs);
         String songToRemove = "song4";
-        // Act
+        // When
         manager.removeSong(songToRemove);
-        // Assert
+        // Then
         Playlist modifiedPlaylist = manager.getPlaylist();
         assertTrue(Arrays.asList(modifiedPlaylist.getSongNameArray()).containsAll(Arrays.asList(songs)));
     }
@@ -49,18 +49,18 @@ public class DeleteSongTest {
 
     @Test
     public void testRemoveExistentSong() {
-        // Arrange
+        // Given
         String[] expectedSongs = {"song1", "song2", "song3"};
         String[] allSongs = {"song1", "song2", "song3", "song4"};
         String songToRemove = "song4";
         PlaylistManager manager = new PlaylistManager(allSongs);
         assertTrue(Arrays.asList(manager.getPlaylist().getSongNameArray()).containsAll(Arrays.asList(allSongs)));
 
-        // Act
+        // When
         manager.removeSong(songToRemove);
 
 
-        // Assert
+        // Then
         Playlist modifiedPlaylist = manager.getPlaylist();
         assertFalse(Arrays.asList(modifiedPlaylist.getSongNameArray()).contains(songToRemove));
     }
