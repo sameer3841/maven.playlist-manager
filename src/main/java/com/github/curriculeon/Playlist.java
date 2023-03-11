@@ -47,10 +47,22 @@ public class Playlist {
     }
 
     public Integer getForwardNumberOfStepsBetween(Integer currentIndex, String desiredSong) {
-        return null;
+        currentSong = currentIndex;
+        int tracker = 0;
+        while(!getCurrentSelection().equals(desiredSong)){
+            tracker++;
+            goToNextSong();
+        }
+        return tracker;
     }
 
     public Integer getBackwardNumberOfStepsBetween(Integer currentIndex, String desiredSong) {
-        return null;
+        currentSong = currentIndex;
+        int tracker = 0;
+        while(!getCurrentSelection().equals(desiredSong)){
+            tracker++;
+            goToPreviousSong();
+        }
+        return tracker;
     }
 }
