@@ -15,7 +15,7 @@ public class PlaylistManager {
     }
 
     public PlaylistManager() {
-        playlist = new Playlist(new String[0]);
+        setPlaylist(new Playlist(new String[0]));
     }
 
     public Playlist getPlaylist() {
