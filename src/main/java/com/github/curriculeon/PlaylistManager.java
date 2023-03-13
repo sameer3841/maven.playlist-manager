@@ -34,7 +34,7 @@ public class PlaylistManager {
 
     public void addSong(String songToAdd) {
         String[] track = new String[playlist.getSongNameArray().length + 1];
-        for(int i = 0; i < playlist.getSongNameArray().length; i++) track[i] = playlist.getSongNameArray()[i];
+        System.arraycopy(playlist.getSongNameArray(),0,track,0,playlist.getSongNameArray().length);
         track[playlist.getSongNameArray().length] = songToAdd;
         setPlaylist(track);
     }
@@ -60,7 +60,6 @@ public class PlaylistManager {
     }
 
     public void printAll() {
-        for(String i : playlist.getSongNameArray())
-            System.out.println(i);
+        for(String i : playlist.getSongNameArray()) System.out.println(i);
     }
 }
