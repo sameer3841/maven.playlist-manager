@@ -28,8 +28,7 @@ public class PlaylistManager {
     }
 
     private void setPlaylist(String[] toArray) {
-        if(toArray != null) playlist = new Playlist(toArray);
-        else throw new IllegalArgumentException();
+        setPlaylist(new Playlist(toArray));
     }
 
     public void addSong(String songToAdd) {
