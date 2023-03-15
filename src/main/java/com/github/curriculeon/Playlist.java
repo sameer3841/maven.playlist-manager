@@ -9,7 +9,7 @@ public class Playlist {
     private final String[] playlist;
 
     public Playlist(String[] songNameArray) {
-        playlist = songNameArray;
+        this(0,songNameArray);
     }
 
     public Playlist(int currentIndex, String[] songNameArray) {
@@ -43,26 +43,20 @@ public class Playlist {
     }
 
     public Integer getNumberOfStepsBetween(Integer currentIndex, String desiredSong, Runnable directionMutator) {
-        return null;
+        currentSong = currentIndex;
+        int tracker = 0;
+        while(!getCurrentSelection().equals(desiredSong)){
+            tracker++;
+            directionMutator.run();
+        }
+        return tracker;
     }
 
     public Integer getForwardNumberOfStepsBetween(Integer currentIndex, String desiredSong) {
-        currentSong = currentIndex;
-        int tracker = 0;
-        while(!getCurrentSelection().equals(desiredSong)){
-            tracker++;
-            goToNextSong();
-        }
-        return tracker;
+        return getNumberOfStepsBetween(currentIndex,desiredSong,this::goToNextSong);
     }
 
     public Integer getBackwardNumberOfStepsBetween(Integer currentIndex, String desiredSong) {
-        currentSong = currentIndex;
-        int tracker = 0;
-        while(!getCurrentSelection().equals(desiredSong)){
-            tracker++;
-            goToPreviousSong();
-        }
-        return tracker;
+        return getNumberOfStepsBetween(currentIndex,desiredSong,this::goToPreviousSong);
     }
 }

@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class AddSongTest {
@@ -52,7 +53,7 @@ public class AddSongTest {
                 count++;
             }
         }
-        assertTrue(count == 2);
+        assertEquals(2, count);
     }
 
 }

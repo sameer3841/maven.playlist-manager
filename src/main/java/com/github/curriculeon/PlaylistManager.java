@@ -1,5 +1,6 @@
 package com.github.curriculeon;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class PlaylistManager {
@@ -33,7 +34,7 @@ public class PlaylistManager {
 
     public void addSong(String songToAdd) {
         String[] track = new String[playlist.getSongNameArray().length + 1];
-        System.arraycopy(playlist.getSongNameArray(),0,track,0,playlist.getSongNameArray().length);
+        System.arraycopy(playlist.getSongNameArray(),0, track, 0, playlist.getSongNameArray().length);
         track[playlist.getSongNameArray().length] = songToAdd;
         setPlaylist(track);
     }
@@ -59,6 +60,6 @@ public class PlaylistManager {
     }
 
     public void printAll() {
-        for(String i : playlist.getSongNameArray()) System.out.println(i);
+        System.out.println(Arrays.toString(playlist.getSongNameArray()));
     }
 }
